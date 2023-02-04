@@ -1,0 +1,213 @@
+/*RESET*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*##################*/
+
+/*Global Colors*/
+
+:root {
+  /*Primary*/
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  /*Neutral*/
+  --dark-blue-400: hsl(215, 32%, 27%);
+  --dark-blue-600: hsl(216, 50%, 16%);
+  --dark-blue-800: hsl(217, 54%, 11%);
+  --white: hsl(0, 0%, 100%);
+}
+/********************/
+
+/*GENERAL STYLING*/
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  background-color: var(--dark-blue-800);
+  color: var(--soft-blue);
+}
+
+.card {
+  width: 80%;
+  max-width: 375px;
+  border-radius: 5%;
+  padding: 1.5em;
+  background-color: var(--dark-blue-600);
+  box-shadow: 0 20px 10px 15px hsl(218, 55%, 10%);
+}
+
+.image {
+  position: relative;
+  margin-bottom: 1.3em;
+}
+
+.image img {
+  border-radius: 3%;
+}
+
+.image__overlay {
+  background: hsla(178, 100%, 50%, 0.501);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+h1 {
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+.info p {
+  font-size: 1.125rem;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.eth-price {
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  border-top: 1px solid var(--dark-blue-400);
+  padding-top: 1em;
+}
+
+.author__img {
+  display: inline-block;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  width: 35px;
+}
+
+.author__name {
+  display: inline;
+}
+
+.author span {
+  color: var(--white);
+}
+
+/*Utility classes*/
+.flow-content > * + * {
+  margin-top: 0.8rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+/*Hover states:*/
+
+@media (hover: hover) {
+  h1:hover {
+    color: var(--cyan);
+    cursor: pointer;
+  }
+  .author__name span:hover {
+    color: var(--cyan);
+    cursor: pointer;
+  }
+  .image__overlay:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
